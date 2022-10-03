@@ -1,0 +1,23 @@
+﻿<Window
+	x:Class="Avalonia.SimpleChart.Sample.Views.MainWindowView"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:viewModels="clr-namespace:Avalonia.SimpleChart.Sample.ViewModels"
+	xmlns:views="clr-namespace:Avalonia.SimpleChart.Sample.Views"
+	Width="1000"
+	Height="600"
+	MinWidth="1000"
+	MinHeight="600"
+	Icon="/Icon.ico"
+	Title="SimpleChart sample"
+	>
+	<Window.DataContext>
+		<viewModels:MainWindowViewModel />
+	</Window.DataContext>
+
+	<TabControl Padding="0">
+		<TabItem Header="Line Chart">
+			<views:LineChartView DataContext="{Binding LineChartViewModel}" />
+		</TabItem>
+	</TabControl>
+</Window>
