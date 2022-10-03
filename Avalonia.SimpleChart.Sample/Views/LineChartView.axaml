@@ -1,0 +1,190 @@
+﻿<UserControl
+	x:Class="Avalonia.SimpleChart.Sample.Views.LineChartView"
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:chart="clr-namespace:Avalonia.SimpleChart;assembly=Avalonia.SimpleChart"
+	>
+	<Grid RowDefinitions="*, Auto">
+		<Border
+			Grid.Row="0"
+			Padding="10"
+			Background="White"
+			>
+			<chart:SimpleChart Margin="40">
+				<chart:SimpleChart.AxisX>
+					<chart:ChartAxisX
+						IsSecondary="True"
+						LabelOffset="30"
+						LabelText="X"
+						MajorTick="TwoSide"
+						MajorTickSize="4"
+						MaximumValue="{Binding MaximumX}"
+						MinimumValue="{Binding MinimumX}"
+						ValueFormat="0.###"
+						ValueStep="{Binding StepX}"
+						>
+
+						<chart:ChartAxis.LinePen>
+							<Pen
+								Brush="Red"
+								Thickness="2"
+								/>
+						</chart:ChartAxis.LinePen>
+
+						<chart:ChartAxis.MajorTickPen>
+							<Pen Brush="Green" />
+						</chart:ChartAxis.MajorTickPen>
+
+						<chart:ChartAxis.MinorTickPen>
+							<Pen Brush="Blue" />
+						</chart:ChartAxis.MinorTickPen>
+
+						<chart:ChartAxis.MajorGridPen>
+							<Pen Brush="LightGray" />
+						</chart:ChartAxis.MajorGridPen>
+
+						<chart:ChartAxis.MinorGridPen>
+							<Pen Brush="WhiteSmoke" />
+						</chart:ChartAxis.MinorGridPen>
+					</chart:ChartAxisX>
+				</chart:SimpleChart.AxisX>
+
+				<chart:SimpleChart.AxisY>
+					<chart:ChartAxisY
+						IsInverted="True"
+						IsSecondary="True"
+						LabelOffset="30"
+						LabelText="Y"
+						MajorTick="TwoSide"
+						MajorTickSize="4"
+						MaximumValue="{Binding MaximumY}"
+						MinimumValue="{Binding MinimumY}"
+						ValueFormat="0.###"
+						ValueStep="{Binding StepY}"
+						>
+
+						<chart:ChartAxis.LinePen>
+							<Pen
+								Brush="Red"
+								Thickness="2"
+								/>
+						</chart:ChartAxis.LinePen>
+
+						<chart:ChartAxis.MajorTickPen>
+							<Pen Brush="Green" />
+						</chart:ChartAxis.MajorTickPen>
+
+						<chart:ChartAxis.MinorTickPen>
+							<Pen Brush="Blue" />
+						</chart:ChartAxis.MinorTickPen>
+
+						<chart:ChartAxis.MajorGridPen>
+							<Pen Brush="LightGray" />
+						</chart:ChartAxis.MajorGridPen>
+
+						<chart:ChartAxis.MinorGridPen>
+							<Pen Brush="WhiteSmoke" />
+						</chart:ChartAxis.MinorGridPen>
+					</chart:ChartAxisY>
+				</chart:SimpleChart.AxisY>
+
+				<chart:SimpleChart.ChartCursor>
+					<chart:ChartCursor
+						BackgroundBrush="WhiteSmoke"
+						BorderRadius="8"
+						CursorType="Free"
+						TextFormat="X: {0:0.###}, Y: {1:0.###}"
+						TextMargin="8"
+						TextOffset="8"
+						>
+						<chart:ChartCursor.BorderPen>
+							<Pen Brush="Gray" />
+						</chart:ChartCursor.BorderPen>
+
+						<chart:ChartCursor.LinePen>
+							<Pen Brush="Red" />
+						</chart:ChartCursor.LinePen>
+					</chart:ChartCursor>
+				</chart:SimpleChart.ChartCursor>
+
+				<chart:SimpleChart.ChartZoom>
+					<chart:ChartZoom BackgroundBrush="#80FFFFFF">
+						<chart:ChartZoom.BorderPen>
+							<Pen
+								Brush="Gray"
+								DashStyle="{x:Static DashStyle.Dash}"
+								/>
+						</chart:ChartZoom.BorderPen>
+					</chart:ChartZoom>
+				</chart:SimpleChart.ChartZoom>
+
+				<chart:SimpleChart.ChartPan>
+					<chart:ChartPan />
+				</chart:SimpleChart.ChartPan>
+
+				<chart:SimpleChart.SeriesCollection>
+					<chart:LineSeries PointsCollection="{Binding LinePoints}">
+						<chart:LineSeries.LinePen>
+							<Pen Brush="OrangeRed" />
+						</chart:LineSeries.LinePen>
+					</chart:LineSeries>
+				</chart:SimpleChart.SeriesCollection>
+			</chart:SimpleChart>
+		</Border>
+
+		<StackPanel
+			Grid.Row="1"
+			Margin="5"
+			HorizontalAlignment="Center"
+			Orientation="Horizontal"
+			>
+
+			<CheckBox
+				Margin="5"
+				VerticalAlignment="Center"
+				Content="Add labels"
+				IsChecked="{Binding AddLabels}"
+				/>
+			<CheckBox
+				Margin="5"
+				VerticalAlignment="Center"
+				Content="Add markers"
+				IsChecked="{Binding AddMarkers}"
+				/>
+
+			<Button
+				Margin="5"
+				Command="{Binding AddPointsCommand}"
+				CommandParameter="1"
+				Content="Add new point"
+				/>
+
+			<Button
+				Margin="5"
+				Command="{Binding AddPointsCommand}"
+				CommandParameter="10"
+				Content="Add 10 points"
+				/>
+
+			<Button
+				Margin="5"
+				Command="{Binding AddPointsCommand}"
+				CommandParameter="100"
+				Content="Add 100 points"
+				/>
+
+			<Button
+				Margin="5"
+				Command="{Binding AddPointsCommand}"
+				CommandParameter="1000"
+				Content="Add 1000 points"
+				/>
+
+			<Button
+				Margin="5"
+				Command="{Binding ClearPointsCommand}"
+				Content="Clear points"
+				/>
+		</StackPanel>
+	</Grid>
+</UserControl>

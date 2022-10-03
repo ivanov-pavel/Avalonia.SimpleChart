@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AvaloniaResource Include="Icon.ico" />
+		<AvaloniaResource Include="Assets\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="0.10.18" />
+		<PackageReference Include="Avalonia.Desktop" Version="0.10.18" />
+		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.18" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="App.axaml.cs">
+			<DependentUpon>App.axaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Avalonia.SimpleChart\Avalonia.SimpleChart.csproj" />
+	</ItemGroup>
+</Project>

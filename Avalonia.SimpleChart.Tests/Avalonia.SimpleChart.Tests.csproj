@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="0.10.18" />
+		<PackageReference Include="MSTest" Version="2.2.10" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Avalonia.SimpleChart\Avalonia.SimpleChart.csproj" />
+	</ItemGroup>
+
+</Project>
