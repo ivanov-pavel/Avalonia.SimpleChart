@@ -16,6 +16,6 @@ Unzooming - Ctrl + Left mouse button press and drag from bottom right to top lef
 
 Panning while zoomed - Shift + Left mouse button press and drag.
 
-![Screenshot](https://github.com/ivanov-pavel/Avalonia.SimpleChart/tree/main/Avalonia.SimpleChart.Sample/Documents/Screenshot.png)
+![Screenshot](https://github.com/ivanov-pavel/Avalonia.SimpleChart/tree/main/Avalonia.SimpleChart.Sample/Documents/Screenshot.png "Screenshot")
 
-![Sample](https://github.com/ivanov-pavel/Avalonia.SimpleChart/tree/main/Avalonia.SimpleChart.Sample/Documents/Sample.gif)
+![Sample](https://github.com/ivanov-pavel/Avalonia.SimpleChart/tree/main/Avalonia.SimpleChart.Sample/Documents/Sample.gif "Sample")
